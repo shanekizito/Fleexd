@@ -16,12 +16,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 
-//ignore this endpoint
-router.route('/').get((req, res) => {
-    const dbName=dbo.client.db("Metagig");   
-    dbName.collection("Home").find().then(users => res.json(users))
-    .catch(err => res.status(400).json('Error: ' + err));
-});
 
 
 
